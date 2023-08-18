@@ -1,0 +1,10 @@
+08/09~09/01 : Java Programming
+09/04~09/11 : DataBase(MariaDB)
+09/12~09/19 : HTML/CSS/JS/JQuery
+09/20~10/05 : Servlet/JSP
+10/06       : Github
+10/10~10/18 : Mini Project
+10/19~10/26 : react.js
+10/27~11/23 : Spring framework/Spring Boot
+11/24~11/27 : AWS EC2
+11/28~12/29 : Final Project
