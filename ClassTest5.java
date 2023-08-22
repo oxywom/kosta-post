@@ -31,6 +31,42 @@ class Bank {
 			System.out.println(accs[i].info());
 		}
 	}
+	
+	Account searchAccById(String id) {
+		for(int i=0; i<accCnt; i++) {
+			if(accs[i].id.equals(id)) {
+				return accs[i];
+			}
+		}
+		return null;
+	}
+	
+	void accountInfo(String id) {
+		Account acc = searchAccById(id);
+		if(acc==null) {
+			System.out.println("계좌번호가 틀립니다.");
+			return;
+		} 
+		System.out.println(acc.info());
+	}
+	
+	void deposit(String id, int money) {
+		Account acc = searchAccById(id);
+		if(acc==null) {
+			System.out.println("계좌번호가 틀립니다.");
+			return;
+		} 
+		acc.deposit(money);
+	}
+	
+	void withdraw(String id, int money) {
+		Account acc = searchAccById(id);
+		if(acc==null) {
+			System.out.println("계좌번호가 틀립니다.");
+			return;
+		} 
+		acc.withdraw(money);
+	}
 }
 public class ClassTest5 {
 	public static void main(String[] args) {
