@@ -41,22 +41,40 @@ public class Bank {
 		System.out.println("[입금]");
 		System.out.print("계좌번호:");
 		String id = sc.nextLine();
-		System.out.print("입금액:");
-		int money = Integer.parseInt(sc.nextLine());
 		Account acc = searchAccById(id);
 		if(acc==null) {
 			System.out.println("계좌번호가 틀립니다.");
 			return;
 		}
+		System.out.print("입금액:");
+		int money = Integer.parseInt(sc.nextLine());
 		acc.deposit(money);
 	}
 	
 	void withdraw() {
-		
+		System.out.println("[출금]");
+		System.out.print("계좌번호:");
+		String id = sc.nextLine();
+		Account acc = searchAccById(id);
+		if(acc==null) {
+			System.out.println("계좌번호가 틀립니다.");
+			return;
+		}
+		System.out.print("출금액:");
+		int money = Integer.parseInt(sc.nextLine());
+		acc.withdraw(money);
 	}
 	
 	void accountInfo() {
-		
+		System.out.println("[계좌조회]");
+		System.out.print("계좌번호:");
+		String id = sc.nextLine();
+		Account acc = searchAccById(id);
+		if(acc==null) {
+			System.out.println("계좌번호가 틀립니다.");
+			return;
+		}
+		System.out.println(acc.info());
 	}
 	
 	void allAccountInfo() {
