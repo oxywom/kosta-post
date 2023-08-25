@@ -18,8 +18,18 @@ public class Bank {
 		return Integer.parseInt(sc.nextLine());
 	}
 	
+	void selAccMenu() {
+		System.out.println("[계좌개설]");
+		System.out.println("1.일반계좌");
+		System.out.println("2.특수계좌");
+		System.out.print("선택>>");
+		int sel = Integer.parseInt(sc.nextLine());
+		if(sel==1) makeAccount();
+		else makeSpecialAccount();		
+	}
+	
 	void makeAccount() {
-		System.out.println("[계좌 개설]");
+		System.out.println("[일반계좌 개설]");
 		System.out.print("계좌번호:");
 		String id = sc.nextLine();
 		System.out.print("이름:");
@@ -27,6 +37,18 @@ public class Bank {
 		System.out.print("입금액:");
 		int money = Integer.parseInt(sc.nextLine());
 		accs[accCnt++]=new Account(id,name,money);
+	}
+	void makeSpecialAccount() {
+		System.out.println("[특수계좌 개설]");
+		System.out.print("계좌번호:");
+		String id = sc.nextLine();
+		System.out.print("이름:");
+		String name = sc.nextLine();
+		System.out.print("입금액:");
+		int money = Integer.parseInt(sc.nextLine());
+		System.out.print("등급(VIP-V,Gold-G,Silver-S,Normal-N):");
+		String grade = sc.nextLine();
+		//추가
 	}
 	
 	Account searchAccById(String id) {
@@ -91,7 +113,7 @@ public class Bank {
 			sel = bank.menu();
 			if(sel==0) break;
 			switch(sel) {
-			case 1: bank.makeAccount(); break;
+			case 1: bank.selAccMenu(); break;
 			case 2: bank.deposit(); break;
 			case 3: bank.withdraw(); break;
 			case 4: bank.accountInfo(); break;
