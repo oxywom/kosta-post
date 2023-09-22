@@ -1,0 +1,7 @@
+SpecialAccount :
+1. Account에 등급(grade) 추가됨. grade:VIP,Gold,Silver,Normal
+2. 등급에 따라 차등으로 입금시마다 이자를 준다.
+(입금액에 다음과 같은 비율로 지급 : VIP:0.04,Gold:0.03,Silver:0.02,Normal:0.01
+ ex: grade(VIP), 10000원 입급시 10400이 입금)
+3. 정보 호출시 등급도 포함
+(ex: 계좌번호:10001,이름:홍길동,잔액:100000,등급:VIP)
